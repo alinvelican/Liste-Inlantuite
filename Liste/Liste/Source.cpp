@@ -13,7 +13,16 @@ public:
 
 		T value;
 		Nod * Next;
+		void ShowNode() {
 
+			cout << value;
+		}
+
+		T ShowValueOfNode() {
+
+			return value;
+
+		}
 
 
 	};
@@ -66,14 +75,20 @@ public:
 	Nod * GetLast() {
 		return PLast;
 	}
+	
+	void InsertTo(Nod * nod)
+	{
+
+	}
 
 	void ShowList() {
-
+		cout << "Lista este ";
 		Nod * nod = PFirst;
 		while (nod != NULL) {
 			cout << nod->value;
 			nod = nod->Next;
 		}
+		cout << endl;
 	}
 private:
 
@@ -94,6 +109,10 @@ int main()
 	l->ShowList();
 	Lista<int>::Nod * nod = l->SearchFirstOcurance(8);
 	cout << nod->value;
+	Lista<int>::Nod *n = l->GetFirst();
+	cout << n->value;
+	n->ShowNode();
+	
 	system("pause");
 	return 0;
 }
